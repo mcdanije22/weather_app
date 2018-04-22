@@ -1,0 +1,39 @@
+* {
+  margin: auto;
+  padding: 0;
+  background-color: #2d344f;
+  font-family: 'Roboto', sans-serif;
+}
+.container {
+  text-align: center;
+  color: white;
+  margin-top: 10%;
+}
+#name {
+  font-size: 4em;
+  margin-top: 10%;
+}
+#test {
+  margin-top: 10%;
+}
+#temp {
+  font-size: 3em;
+}
+#con {
+  font-size: 1.5em;
+}
+#icon {
+  height: 8rem;
+  width : 8rem;
+}
+.change{
+  background-color: white;
+  border-radius: 5px;
+  font-size: 2em;
+  border: 2px solid black;
+  padding: 7px;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
