@@ -7,17 +7,13 @@
 .container {
   text-align: center;
   color: white;
-  margin-top: 10%;
+  margin-top: 3em;
 }
 #name {
   font-size: 4em;
-  margin-top: 10%;
-}
-#test {
-  margin-top: 10%;
 }
 #temp {
-  font-size: 3em;
+  font-size: 5em;
 }
 #con {
   font-size: 1.5em;
@@ -36,4 +32,11 @@
 a {
   cursor: pointer;
   cursor: hand;
+}
+footer a {
+  color: purple;
+}
+footer{
+  margin-top: 2em;
+
 }

@@ -1,6 +1,8 @@
 var lat ="lat=40.8041667";
 var long = "lon=-73.9436111";
-var currentWeather;
+var far;
+var cel;
+var temp;
 /*function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -19,15 +21,15 @@ function getData() {
 
 xhr.onload = function(){
   var data = JSON.parse(xhr.responseText);
-  currentWeather = Math.round(data.main.temp);
-    document.getElementById("temp").innerHTML = currentWeather + " &#8457;";
+  far = Math.round(data.main.temp) ;
+  cel = Math.round((far - 32) * 5/9);
+  temp = far;
+    document.getElementById("temp").innerHTML = far + " &#8457;";
     document.getElementById("con").innerHTML = data.weather[0].main;
     document.getElementById("name").innerHTML = data.name +", "+ data.sys.country;
-    //document.getElementById("test").innerHTML = data.weather[0].icon;
     var icon =  data.weather[0].icon;
     var link = "http://openweathermap.org/img/w/" + icon + ".png";
     document.getElementById("icon").src = link;
-  //  document.getElementById("y").innerHTML = xhr.responseText;
   console.log(xhr.responseText);
 }
 var api = "https://api.openweathermap.org/data/2.5/weather?";
@@ -39,9 +41,15 @@ xhr.open("GET",url, true);
 xhr.send();
 }
 window.onload = getData;
+
 function show () {
-currentWeather = Math.round((currentWeather - 32) * 5/9);
-document.getElementById("temp").innerHTML = currentWeather + "&#8451;";
+if (temp == far){
+  document.getElementById("temp").innerHTML = cel +"&#8451;";
+  temp = cel
+} else {
+  document.getElementById("temp").innerHTML = far + " &#8457;";
+  temp = far
+}
 }
 //var today = new Date();
 //document.getElementById('time').innerHTML=today;
