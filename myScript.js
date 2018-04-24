@@ -1,21 +1,22 @@
-var lat ="lat=40.8041667";
-var long = "lon=-73.9436111";
+var lat;      //"lat=40.8041667";
+var long;      //"lon=-73.9436111";
 var far;
 var cel;
 var temp;
-/*function getLocation() {
+function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-        document.getElementById(x).innerHTML = "Geolocation is not supported by this browser.";
+        document.getElementById("temp").innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 function showPosition(position) {
     lat =  "lat=" + position.coords.latitude;
     long =  "lon=" + position.coords.longitude;
+
 }
 window.onload = getLocation;
- */
+
 function getData() {
   var xhr = new XMLHttpRequest();
 
@@ -40,7 +41,8 @@ var url = api + lat + "&" + long + apiKey + units;
 xhr.open("GET",url, true);
 xhr.send();
 }
-window.onload = getData;
+setTimeout(getData, 3000);
+//window.onload = getData;
 
 function show () {
 if (temp == far){
@@ -51,5 +53,6 @@ if (temp == far){
   temp = far
 }
 }
+
 //var today = new Date();
 //document.getElementById('time').innerHTML=today;
